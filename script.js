@@ -80,17 +80,17 @@ document.getElementById('search').addEventListener('click', () => {
 
         if (IsDay === 0) {
             if (statement == 'Partly cloudy') {
-                img.src = '/images/partial clouds night.png'
+                img.src = 'images/partial clouds night.png'
             }
         } else if (IsDay === 1) {
             if (statement == 'Partly cloudy') {
-                img.src = '/images/partial clouds.png'
+                img.src = 'images/partial clouds.png'
             }
         }
 
         switch (statement) {
             case 'Clear':
-                img.src = '/images/moon.png'
+                img.src = 'images/moon.png'
                 break;
 
             case 'Sunny':
