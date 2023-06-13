@@ -10,7 +10,7 @@ document.getElementById('search').addEventListener('click', () => {
     if (city === '')
         return
 
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${city}`).then(response => response.json()).then(json => {
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${city}`).then(response => response.json()).then(json => {
 
         console.log(json);
 
