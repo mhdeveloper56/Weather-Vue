@@ -94,27 +94,27 @@ document.getElementById('search').addEventListener('click', () => {
                 break;
 
             case 'Sunny':
-                img.src = '/images/sunny.png'
+                img.src = 'images/sunny.png'
                 break;
 
             case 'Mist':
-                img.src = '/images/mist.png'
+                img.src = 'images/mist.png'
                 break;
 
             case 'Patchy rain possible':
-                img.src = '/images/rain.png'
+                img.src = 'images/rain.png'
                 break;
 
             case 'Overcast':
-                img.src = '/images/cloudy.png'
+                img.src = 'images/cloudy.png'
                 break;
 
             case 'Light rain':
-                img.src = '/images/rain.png'
+                img.src = 'images/rain.png'
                 break;
 
             case 'Cloudy':
-                img.src = '/images/cloudy.png'
+                img.src = 'images/cloudy.png'
                 break;
             default:
                 break;
