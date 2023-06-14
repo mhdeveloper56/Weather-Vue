@@ -13,10 +13,10 @@ function DisplayingLogo() {
 }
 window.addEventListener('load', () => {
     DisplayingLogo()
-    
-    .catch((error) => {
-        console.error('Some Error Occures During Resolving Promise', error);
-    });
+
+        .catch((error) => {
+            console.error('Some Error Occures During Resolving Promise', error);
+        });
 });
 
 
@@ -48,6 +48,10 @@ const ViewWeather = () => {
         } else {
             console.log(IsDay);
         }
+
+        if (ActualTemprature < 6) {
+            document.getElementById('weather-container').style.background = 'linear-gradient(90deg, rgba(90,200,250,1) 0%, rgba(121,228,254,1) 91%)'
+        } 
 
         // Coverting Date String InTo read-able Local-Time
 
@@ -91,7 +95,7 @@ const ViewWeather = () => {
 
         let img = document.querySelector('#weather-icon img');
         let statement = json.current.condition.text;
-
+    
 
         if (IsDay === 0) {
             if (statement == 'Partly cloudy') {
@@ -105,7 +109,11 @@ const ViewWeather = () => {
 
         switch (statement) {
             case 'Clear':
-                img.src = 'images/moon.png'
+                if (ActualTemprature < 6) {
+                    img.src = 'images/snow.png'
+                } else {
+                    img.src = 'images/moon.png'
+                }
                 break;
 
             case 'Sunny':
@@ -131,6 +139,14 @@ const ViewWeather = () => {
             case 'Cloudy':
                 img.src = 'images/cloudy.png'
                 break;
+
+            case 'Light rain shower':
+                img.src = 'images/rain.png'
+                break;
+
+            case 'Moderate rain':
+                img.src = 'images/rain.png'
+                break;
             default:
                 break;
         }
@@ -139,17 +155,17 @@ const ViewWeather = () => {
 }
 
 document.getElementById('search').addEventListener('click', ViewWeather);
-document.getElementById('search-form').addEventListener('submit', function(event) {
+document.getElementById('search-form').addEventListener('submit', function (event) {
     event.preventDefault();
     ViewWeather();
-  });
-  
+});
+
 
 
 
 // ----- Going Back To Search Page ----- //
 
-document.getElementById('back-search').addEventListener('click', ()=>{
+document.getElementById('back-search').addEventListener('click', () => {
     document.getElementById('search-container').style.display = 'flex'
     document.getElementById('weather-container').style.display = 'none'
     document.body.style.background = ''
