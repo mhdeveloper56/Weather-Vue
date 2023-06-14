@@ -5,26 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Weather App</title>
+    <link rel="shortcut icon" href="images/logo1.png" type="image/png">
+    <title>Weather Vue</title>
 </head>
 
 <body>
-    <div id="search-container" class="container-search">
-        <div class="home-page">
-        <h1>Weather App</h1>
-        <div class="search-page">
-            <img src="images/weather.png" alt="">
-            <hr>
-            <div class="search-box">
-                <h2>Search For  Your City</h2>
-                <input type="text" id="location" placeholder="Enter Your Location">
-                <button id="search" class="fa-solid fa-magnifying-glass"></button>
-            </div>
-        </div>
+
+    <!------- Displaying Logo ------>
+
+    <div id="logo-div" class="logo">
+        <img src="images/logo.png" alt="">
     </div>
 
-    
+    <!------- Displaying Search Box ------>
+
+    <div id="search-container" class="container-search">
+        <div class="home-page">
+            <h1>Weather Vue</h1>
+            <div class="search-page">
+                <img src="images/weather.png" alt="">
+                <hr>
+                <div class="search-box">
+                    <h2>Search For Your City</h2>
+                    <input type="text" id="location" placeholder="Enter Your Location">
+                    <button id="search" class="fa-solid fa-magnifying-glass"></button>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
+    <!------- Displaying Weather Box ------>
 
     <div id="weather-container" class="container-weather">
         <h1 id="weather-location"></h1>
@@ -65,6 +77,7 @@
                 </div>
             </div>
         </div>
+        <button id="back-search" class="fa-solid fa-magnifying-glass"> Go Back</button>
     </div>
     </div>
 

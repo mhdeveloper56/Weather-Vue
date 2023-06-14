@@ -1,5 +1,30 @@
+//-------  Displaying Logo -------//
+
+document.getElementById('logo-div').classList.add('fadeIn')
+function DisplayingLogo() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            document.getElementById('logo-div').style.display = 'none';
+            document.getElementById('search-container').style.display = 'flex';
+            resolve();
+        }, 2500);
+        document.getElementById('search-container').classList.add('fadeIn')
+    });
+}
+window.addEventListener('load', () => {
+    DisplayingLogo()
+    
+    .catch((error) => {
+        console.error('Some Error Occures During Resolving Promise', error);
+    });
+});
+
+
+// ----- Displaying Weather Details ----- //
+
 document.getElementById('search').addEventListener('click', () => {
     document.getElementById('search-container').style.display = 'none'
+    document.getElementById('weather-container').classList.add('fadeIn')
     document.getElementById('weather-container').style.display = 'flex'
     document.body.style.background = '#232634'
 
@@ -15,13 +40,6 @@ document.getElementById('search').addEventListener('click', () => {
         console.log(json);
 
         let ActualTemprature = Math.round(json.current.temp_c)
-
-        function capitalizeFirstLetter(word) {
-            return word.replace(/^\w/, function (match) {
-                return match.toUpperCase();
-            });
-        }
-        let capitalizedWord = capitalizeFirstLetter(city);
 
         let IsDay = json.current.is_day
 
@@ -47,9 +65,10 @@ document.getElementById('search').addEventListener('click', () => {
 
         const formattedTime = `${formattedHours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}${period}`;
 
+
         function handleViewportChange() {
-            if (window.matchMedia("(max-width: 480px)").matches) {
-                document.getElementById('weather-location').innerHTML = `${capitalizedWord} Weather`;
+            if (window.matchMedia("(max-width: 420px)").matches) {
+                document.getElementById('weather-location').innerHTML = `${json.location.name}`;
             } else {
                 document.getElementById('weather-location').innerHTML = `${json.location.name} Weather`
             }
@@ -57,10 +76,6 @@ document.getElementById('search').addEventListener('click', () => {
 
         window.addEventListener("resize", handleViewportChange);
         handleViewportChange()
-
-
-        
-        
 
 
         document.getElementById('temp').innerHTML = `${ActualTemprature} °C`
@@ -121,4 +136,14 @@ document.getElementById('search').addEventListener('click', () => {
         }
 
     })
+})
+
+
+// ----- Going Back To Search Page ----- //
+
+document.getElementById('back-search').addEventListener('click', ()=>{
+    document.getElementById('search-container').style.display = 'flex'
+    document.getElementById('weather-container').style.display = 'none'
+    document.body.style.background = ''
+
 })
