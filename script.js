@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
 
 // ----- Displaying Weather Details ----- //
 
-document.getElementById('search').addEventListener('click', () => {
+const ViewWeather = () => {
     document.getElementById('search-container').style.display = 'none'
     document.getElementById('weather-container').classList.add('fadeIn')
     document.getElementById('weather-container').style.display = 'flex'
@@ -136,7 +136,15 @@ document.getElementById('search').addEventListener('click', () => {
         }
 
     })
-})
+}
+
+document.getElementById('search').addEventListener('click', ViewWeather);
+document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    ViewWeather();
+  });
+  
+
 
 
 // ----- Going Back To Search Page ----- //
