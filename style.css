@@ -395,8 +395,8 @@ overflow: hidden;
 
 @media (max-width: 376px) {
   .container-weather {
-    height: 94vh;
-    margin-top: 3vh;
+    height: 92vh;
+    margin-top: 4vh;
   }
 
   .temprature-details h1 {
