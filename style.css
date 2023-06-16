@@ -404,6 +404,11 @@ overflow: hidden;
     /* margin-bottom: -1rem; */
   }
 
+
+  #weather-location {
+    margin-bottom: 0.1rem;
+  }
+
   .pressure {
     display: none;
   }
