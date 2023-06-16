@@ -46,6 +46,7 @@ const ViewWeather = () => {
         if (IsDay === 0) {
             document.getElementById('weather-container').style.background = 'linear-gradient(90deg, rgba(90,200,250,1) 0%, rgba(121,228,254,1) 91%)'
         } else {
+            document.getElementById('weather-container').style.background = ' linear-gradient(90deg, rgba(255,190,148,1) 31%, rgba(250,225,112,1) 100%)'
             console.log(IsDay);
         }
 
@@ -89,14 +90,27 @@ const ViewWeather = () => {
         document.getElementById('date-time').innerHTML = `Time: ${formattedTime}`
         document.getElementById('windr').innerHTML = ` ${json.current.wind_kph}Km/h`
         document.getElementById('pressurer').innerHTML = `${json.current.pressure_in} pa`
-        document.getElementById('statement').innerHTML = `${json.current.condition.text}`
         document.getElementById('wind-speed').innerHTML = `Wind (${json.current.wind_dir})`
-
-
+        
+        
         let img = document.querySelector('#weather-icon img');
         let statement = json.current.condition.text;
-    
+        
+        let words = ['thundery','thunderstorm'];
 
+        for (const word of words) {
+            if (statement.toLowerCase().includes(word)) {
+                statement = 'Thunderstorm Possible'
+                img.src = 'images/thunder.png'
+                break;
+            } else if (statement == 'Moderate or heavy rain with thunder') {
+                statement = 'Heavy Rain'
+                img.src = 'images/thunder.png'
+                break;
+            }}
+
+            document.getElementById('statement').innerHTML = `${statement}`
+            
         if (IsDay === 0) {
             if (statement == 'Partly cloudy') {
                 img.src = 'images/partial clouds night.png'
