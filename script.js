@@ -107,6 +107,10 @@ const ViewWeather = () => {
                 statement = 'Heavy Rain'
                 img.src = 'images/thunder.png'
                 break;
+            } else if (statement == 'Moderate or heavy rain shower') {
+                statement = 'Heavy Rain'
+                img.src = 'images/rain.png'
+                break;
             }}
 
             document.getElementById('statement').innerHTML = `${statement}`
@@ -159,9 +163,6 @@ const ViewWeather = () => {
                 break;
 
             case 'Moderate rain':
-                img.src = 'images/rain.png'
-                break;
-            case 'Moderate or heavy rain shower':
                 img.src = 'images/rain.png'
                 break;
             default:
