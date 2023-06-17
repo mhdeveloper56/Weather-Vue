@@ -108,7 +108,7 @@ const ViewWeather = () => {
                 img.src = 'images/thunder.png'
                 break;
             } else if (statement == 'Moderate or heavy rain shower') {
-                statement = 'Heavy Rain'
+                statement = 'Rain Showers'
                 img.src = 'images/rain.png'
                 break;
             }}
