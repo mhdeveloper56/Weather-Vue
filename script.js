@@ -161,6 +161,9 @@ const ViewWeather = () => {
             case 'Moderate rain':
                 img.src = 'images/rain.png'
                 break;
+            case 'Moderate or heavy rain shower':
+                img.src = 'images/rain.png'
+                break;
             default:
                 break;
         }
