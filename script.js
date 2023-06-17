@@ -1,3 +1,4 @@
+import { API_KEY } from './config.js';
 //-------  Displaying Logo -------//
 
 document.getElementById('logo-div').classList.add('fadeIn')
@@ -28,14 +29,14 @@ const ViewWeather = () => {
     document.getElementById('weather-container').style.display = 'flex'
     document.body.style.background = '#232634'
 
-    const APIKey = '1255b307aacb467ea2b202637231006';
     const city = document.getElementById('location').value;
+
     // city = 'Washington'
 
     if (city === '')
         return
 
-    fetch(`https://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${city}`).then(response => response.json()).then(json => {
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY }&q=${city}`).then(response => response.json()).then(json => {
 
         console.log(json);
 
