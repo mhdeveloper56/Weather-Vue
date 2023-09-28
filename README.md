@@ -19,7 +19,7 @@ To use the Weather Vue WebApp, follow these steps:
 
 ## Copyright
 
-All rights reserved. This WebApp, "Weather Vue," is the intellectual property of Muhammad Hamza(MH-Developer1). No part of this WebApp may be reproduced, distributed, or transmitted in any form or by any means, without the prior written permission of the owner. For permission requests, contact mhdeveloper56@gmail.com.
+All rights reserved. This WebApp, "Weather Vue," is the intellectual property of Muhammad Hamza(mhdeveloper56). No part of this WebApp may be reproduced, distributed, or transmitted in any form or by any means, without the prior written permission of the owner. For permission requests, contact mhdeveloper56@gmail.com.
 
 Please note that the weather data displayed in the Weather Vue WebApp is sourced from reliable and trusted weather services. However, we do not guarantee the accuracy or completeness of the information provided. 
 
